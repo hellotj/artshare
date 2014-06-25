@@ -3,7 +3,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  
+  include PublicActivity::StoreController
+  # ...
+   hide_action :current_user
 
   protected
 
@@ -11,6 +13,6 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.for(:sign_up) << :name
       devise_parameter_sanitizer.for(:account_update) << :name
       devise_parameter_sanitizer.for(:user) << :avatar
-    end
+   end
 
 end
