@@ -1,6 +1,6 @@
 <div class="user-box">
 	<%= image_tag post.user.avatar.url(:thumb), class: 'profile_post' %>
-	<%= link_to post.user.name, post.user %>
+	<%= link_to post.user.full_name, post.user %>
 </div>
 <p>
   <%= post.content %>
