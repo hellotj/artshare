@@ -1,0 +1,3 @@
+$('.user-<%= @user.id %>').html('<%= escape_javascript(render "shared/unfollow", user: @user) %> ');
+
+// escape javascript function - escapes all the weird characters that would break the javascript function

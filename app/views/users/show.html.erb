@@ -1,0 +1,8 @@
+<div class="right">
+	<% if user_signed_in? %>
+	<%= render 'shared/follow_form' , user: @user%>
+	<% end %>
+</div>
+<span class="left">
+<h4><%= @user.name %></h4>
+</span>
