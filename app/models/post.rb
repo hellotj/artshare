@@ -6,4 +6,7 @@ class Post < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   has_many :comments
   acts_as_likeable
+  include PublicActivity::Model
+  tracked owner: ->(controller, model) { controller && controller.current_user }
+    
 end

@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   patch 'users/:id/follow' => 'users#follow', as: :follow
   patch 'users/:id/unfollow' => 'users#unfollow', as: :unfollow
 
+  patch 'users/:id/like' => 'users#like', as: :like
+  patch 'users/:id/unlike' => 'users#unlike', as: :unlike
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
