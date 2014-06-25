@@ -6,6 +6,7 @@
   <%= post.content %>
 </p>
 	<%= image_tag post.avatar.url if post.avatar.exists? %>
+
 <div class="<%= post.class %>-<%= post.id %>">
 	<%= link_to pluralize(post.comments.count, 'comment'), post, class: 'comments' %>
 </div>
