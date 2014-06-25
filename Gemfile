@@ -47,3 +47,4 @@ gem 'public_activity'
 
 gem 'socialization'
 gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'rails_12factor'
