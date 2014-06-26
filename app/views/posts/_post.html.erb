@@ -1,4 +1,4 @@
-<div>
+
 <div class="user-box">
 	<%= image_tag post.user.avatar.url(:thumb), class: 'profile_post' %>
 	<%= link_to post.user.full_name, post.user %>
@@ -9,8 +9,7 @@
 	<%= image_tag post.avatar.url if post.avatar.exists? %>
 
 <div class="<%= post.class %>-<%= post.id %>">
-	<%= link_to pluralize(post.comments.count, 'comment'), post, class: 'comments' %>
+	<p><%= link_to pluralize(post.comments.count, 'comment'), post, class: 'comments' %></p>
 </div>
 
-<div class="likes"><%= pluralize(post.likers(User).count, 'like')%></div>
-</div>
+<div class="likes"><p><%= pluralize(post.likers(User).count, 'like')%></p></div>

@@ -3,7 +3,7 @@
 	<%= image_tag activity.owner.avatar.url(:thumb), class: 'like_profile' %>
 	<%= link_to activity.owner.full_name, activity.owner %>
 
-	commented on <%= link_to "Post", activity.trackable.post %>
+	commented on <%= activity.owner.full_name %>'s <%= link_to "Post", activity.trackable.post %>
 </div>
 
 <div class="like_post">
