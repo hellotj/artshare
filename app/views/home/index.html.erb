@@ -1,8 +1,15 @@
 <div class="row">
 
+<h5>Add your work here and say something about it</h5>
 <%= render 'posts/form' %>
+<h5>New work and discussion from your peers </h5>
 <% @activities.each do |activity| %> 
 	<%= render_activity(activity) %>
+	<% if activity.created_at > Time.now.beginning_of_day %>
+    Posted <%="#{time_ago_in_words(activity.created_at)} ago"%>   
+		<% else %>
+    <%= activity.created_at.strftime("%b %d, %Y") %> 
+		<% end %>
 <% end %>
 
 </div>

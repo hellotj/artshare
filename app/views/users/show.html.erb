@@ -1,13 +1,30 @@
-<div class="right">
-	<% if user_signed_in? %>
-	<%= render 'shared/follow_form' , user: @user%>
+<div class="row"
+	<div>
+		<% if user_signed_in? %>
+		<%= render 'shared/follow_form' , user: @user%>
 	<% end %>
 </div>
-<span class="left">
-<h4><%= @user.full_name %></h4>
-</span>
-<div class="row feed ">
-<% @activities.each do |activity| %>
+</div>
+	
+	<span class="right medium-2 columns">
+		<div>
+		<h6><%= @user.full_name %></h6>
+		<li><a href="#"><%= link_to "Edit Profile", edit_user_registration_path %></a></li>
+    <li><a href="#"><%= link_to "Logout", destroy_user_session_path, method: :delete %></a></li>
+		</div>
+	</span>
+
+	<div class="left medium-6 columns">
+		<% @activities.each do |activity| %>
     <%= render_activity(activity) %>
-<% end %>
+    <% if activity.created_at > Time.now.beginning_of_day %>
+    Posted <%="#{time_ago_in_words(activity.created_at)} ago"%>   
+		<% else %>
+    <%= activity.created_at.strftime("%b %d, %Y") %> 
+		<% end %>
+	
+	<% end %>
+	</div>
+
+</div>
 </div>
