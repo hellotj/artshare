@@ -10,6 +10,7 @@ class HomeController < ApplicationController
         #get only the ids of the people current_user folllows
         #followees_ids << current_user.id
         @activities = PublicActivity::Activity.where(owner_id: followees_ids, owner_type: "User")
+        @activities = @activities.order(:created_at).reverse_order
       end
    end
 end

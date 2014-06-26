@@ -4,5 +4,5 @@ class Comment < ActiveRecord::Base
     include PublicActivity::Model
     acts_as_likeable
     tracked owner: ->(controller, model) { controller && controller.current_user }
-    
+    validates_presence_of :content
 end
