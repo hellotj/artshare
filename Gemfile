@@ -44,7 +44,7 @@ gem 'spring',        group: :development
 
 gem 'devise'
 gem 'public_activity'
-
+gem 'pg_search'
 gem 'socialization'
 gem 'paperclip', '~> 4.1'
 gem 'aws-sdk'

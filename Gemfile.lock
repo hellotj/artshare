@@ -83,6 +83,10 @@ GEM
       cocaine (~> 0.5.3)
       mime-types
     pg (0.17.1)
+    pg_search (0.7.4)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     polyglot (0.3.5)
     public_activity (1.4.1)
       actionpack (>= 3.0.0)
@@ -165,6 +169,7 @@ DEPENDENCIES
   jquery-rails
   paperclip (~> 4.1)
   pg
+  pg_search
   public_activity
   rails (= 4.1.0)
   rails_12factor

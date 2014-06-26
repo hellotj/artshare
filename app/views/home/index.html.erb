@@ -1,15 +1,19 @@
-<div class="row">
-
-<h5>Add your work here and say something about it</h5>
-<%= render 'posts/form' %>
+<div class="frontpage row">
+	<div class="12-large 12-medium 12-small columns">
+		<%= render 'posts/form' %>
+	</div>
+<div class= "12-large 12-medium 12-small columns">
 <h5>New work and discussion from your peers </h5>
+</div>
+<div class= "12-large 12-medium 12-small columns">
 <% @activities.each do |activity| %> 
 	<%= render_activity(activity) %>
-	<% if activity.created_at > Time.now.beginning_of_day %>
-    Posted <%="#{time_ago_in_words(activity.created_at)} ago"%>   
-		<% else %>
-    <%= activity.created_at.strftime("%b %d, %Y") %> 
+		<% if activity.created_at > Time.now.beginning_of_day %>
+	    Posted <%="#{time_ago_in_words(activity.created_at)} ago"%>   
+				<% else %>
+	    <%= activity.created_at.strftime("%b %d, %Y") %> 
 		<% end %>
 <% end %>
 
+	</div>
 </div>

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "▲rtsh▲re" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -15,15 +15,18 @@
     <div class="fixed">
     <nav class="top-bar" data-topbar>
       <section class="tab-bar-section">
-        <a class="navbar-brand" href="/"><img alt="logo"  src="/assets/artshare_logo_web.png" width = "120"></a>
+        <div class="navbar-brand" href="/"><img alt="logo"  src="/assets/artshare_logo_web.png" width = "120"></div>
       </section>
       
       <section class="top-bar-section">
         <!-- Right Nav Section -->
+        
+        <% if user_signed_in? %>
         <ul class="right">
-          <li>
-            <% if user_signed_in? %>
-            <a href="#"><%= link_to current_user.full_name, current_user %></a></li></ul>       
+          <li><a href="#"><%= link_to "Discussion", root_path %></a></li>
+          <li><a href="#"><%= link_to "Artists", users_path %></a></li>
+          <li><a href="#"><%= link_to "My Work", current_user %></a></li>
+        </ul>       
             <% else %>
             <ul class="right">
               <li><a href="#"><%= link_to "Sign Up", new_user_registration_path %></a></li>

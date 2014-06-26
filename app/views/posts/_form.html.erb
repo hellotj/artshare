@@ -12,10 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.text_area :content %>
-  </div>
-  <%= f.file_field :avatar %>
-  <div class="actions">
-    <%= f.submit class: 'small button' %>
+    <div class= "large-6 medium-6 columns">
+      <label>
+         <%= f.text_area :content, class: 'form-control', placeholder: "Post your work and write here about it" %>
+      </label>
+    </div>
+     <div class= "large-6 medium-6 small-6 columns"><%= f.submit class: 'small button' %>
+      <%= f.file_field :avatar %> 
+    </div>
   </div>
 <% end %>
