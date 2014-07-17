@@ -8,10 +8,12 @@
 <div class= "12-large 12-medium 12-small columns">
 <% @activities.each do |activity| %> 
 	<%= render_activity(activity) %>
-		<% if activity.created_at > Time.now.beginning_of_day %>
-	    Posted <%="#{time_ago_in_words(activity.created_at)} ago"%>   
-				<% else %>
-	    <%= activity.created_at.strftime("%b %d, %Y") %> 
+		<% if activity.trackable_type == "Post" %>
+			<% if activity.created_at > Time.now.beginning_of_day %>
+		    Posted <%="#{time_ago_in_words(activity.created_at)} ago"%>   
+			<% else %>
+		    <%= activity.created_at.strftime("%b %d, %Y") %> 
+			<% end %>
 		<% end %>
 <% end %>
 

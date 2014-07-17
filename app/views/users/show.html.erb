@@ -15,15 +15,17 @@
 	</span>
 
 	<div class="left medium-6 columns">
-		<% @activities.each do |activity| %>
-    <%= render_activity(activity) %>
-    <% if activity.created_at > Time.now.beginning_of_day %>
-    Posted <%="#{time_ago_in_words(activity.created_at)} ago"%>   
-		<% else %>
-    <%= activity.created_at.strftime("%b %d, %Y") %> 
+<% @activities.each do |activity| %> 
+	<%= render_activity(activity) %>
+		<% if activity.trackable_type == "Post" %>
+			<% if activity.created_at > Time.now.beginning_of_day %>
+		    Posted <%="#{time_ago_in_words(activity.created_at)} ago"%>   
+			<% else %>
+		    <%= activity.created_at.strftime("%b %d, %Y") %> 
+			<% end %>
 		<% end %>
-	
-	<% end %>
+<% end %>
+
 	</div>
 
 </div>
