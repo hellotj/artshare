@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "▲rtsh▲re" %></title>
-
+    <script src="js/foundation/foundation.reveal.js"></script>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
@@ -28,10 +28,7 @@
           <li><a href="#"><%= link_to "My Work", current_user %></a></li>
         </ul>       
             <% else %>
-            <ul class="right">
-              <li><a href="#"><%= link_to "Sign Up", new_user_registration_path %></a></li>
-              <li><a href="#"><%= link_to "Sign In", new_user_session_path %></a></li>
-            </ul>
+            
           <% end %>
           </li>
         </ul>

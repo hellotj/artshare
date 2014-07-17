@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   get 'users/show'
   devise_for :users, :controllers => { registrations: 'registrations' }
   get 'home/index'
-  root 'home#index'
+  post 'home/index'
+  devise_scope :user do
+  root "devise/sessions#new"
+  end
 
-
+  
   resources :users
   resources :works
   resources :posts
