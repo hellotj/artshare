@@ -14,18 +14,25 @@
   <body>
     <div class="fixed">
     <nav class="top-bar" data-topbar>
-      <section class="tab-bar-section">
-        <div class="navbar-brand" href="/"><img alt="logo"  src="/assets/artshare_logo_web.png" width = "120"></div>
-      </section>
+      <ul class="title-area">
+        <li class="logo">
+          <object type="image/png" data="/assets/artshare_logo_web.png" width = "240" >
+        </object>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a>
+        </li>
+      </ul>
+    
       
       <section class="top-bar-section">
         <!-- Right Nav Section -->
         
         <% if user_signed_in? %>
+
         <ul class="right">
-          <li><a href="#"><%= link_to "Discussion", root_path %></a></li>
-          <li><a href="#"><%= link_to "Artists", users_path %></a></li>
-          <li><a href="#"><%= link_to "My Work", current_user %></a></li>
+          <li><%= link_to "Discussion", root_path %></li>
+          <li><%= link_to "Artists", users_path %></li>
+          <li><%= link_to "My Work", current_user %></li>
         </ul>       
             <% else %>
             
