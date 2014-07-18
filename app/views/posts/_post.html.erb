@@ -12,4 +12,5 @@
 	<p><%= link_to pluralize(post.comments.count, 'comment'), post, class: 'comments' %></p>
 </div>
 
-<div class="likes"><p><%= pluralize(post.likers(User).count, 'like')%></p></div>
+<div class="likes"><p><%= link_to pluralize(post.likers(User).count, 'like'), class: 'likes' %></p>
+</div>

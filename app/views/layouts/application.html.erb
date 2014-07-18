@@ -16,10 +16,9 @@
     <nav class="top-bar" data-topbar>
       <ul class="title-area">
         <li class="logo">
-          <object type="image/png" data="/assets/artshare_logo_web.png" width = "240" >
-        </object>
+          <%= link_to image_tag("/assets/artshare_logo_web.png", :width => 240), root_path %>
         </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a>
+        <li class="toggle-topbar menu-icon"><a href="javascript:;"><span></span></a>
         </li>
       </ul>
     
@@ -34,7 +33,6 @@
           <li><%= link_to "Artists", users_path %></li>
           <li><%= link_to "My Work", current_user %></li>
         </ul>       
-            <% else %>
             
           <% end %>
           </li>
